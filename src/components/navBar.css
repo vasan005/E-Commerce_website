@@ -1,0 +1,37 @@
+
+.navBar-container {
+    @apply bg-[#a9a9a94d] h-[11vh] z-[1];
+  }
+  .navBar-main {
+    @apply flex justify-between items-center;
+    margin: 0 3rem
+  }
+  .navBar-heading h3 {
+    @apply text-[32px] text-white;
+  }
+  .navBar-links {
+    @apply flex text-center gap-8 items-center;
+  }
+  .navBar-links h3 {
+    @apply text-base;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 95, 106, 1) 0%,
+      rgba(255, 167, 82, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .navBar-icons {
+    @apply flex items-center gap-6;
+  }
+  .navBar-icons button {
+    @apply border bg-[white] text-[linear-gradient(90deg,rgba(255,95,106,1)_0%,rgba(255,167,82,1)_100%)] p-[5px] rounded-[15%] border-solid border-[white];
+  }
+  
+
+
+
+
+
+

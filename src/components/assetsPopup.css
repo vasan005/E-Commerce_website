@@ -1,0 +1,119 @@
+.assets-popup-container{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 4rem;
+}
+
+.assets-popup-main{
+    border: 1px solid grey;
+    border-radius: 15px;
+    display: flex;
+    padding: 1rem;
+    gap: 2rem;
+ 
+}
+
+.assets-popup-section1 h2{
+    padding: 2rem 0;
+    color: white;
+
+}
+
+
+
+.assets-popup-value{
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+.assets-popup-value img{
+    height: 6vh;   
+}
+
+.assets-popup-value h1{
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(90deg,
+    rgba(255, 95, 106, 1) 0%,
+    rgba(255, 167, 82, 1) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+.assets-popup-description1{
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+}
+.assets-popup-description1 p{
+    color: white;
+    font-size: 16px;
+}
+
+.assets-popup-buy{
+    display: flex;
+    gap: 1rem;
+    padding-top: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    
+
+}
+
+.assets-popup-buy p{
+    border: 1px ;
+    background: linear-gradient(90deg,
+    rgba(255, 95, 106, 1) 0%,
+    rgba(255, 167, 82, 1) 100%);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;   
+}
+
+.assets-popup-format h4{
+    color: white;
+    padding: 0.5rem 0;
+
+}
+
+.assets-popup-format-box1{
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    
+}
+.assets-popup-format-box1 p{
+    color: white;
+    border: 1px solid white;
+    padding: 0.2rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.assets-popup-format-box2{
+    display: flex;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    
+}
+
+.assets-popup-format-box2 p{
+    color: white;
+    font-size: 16px;
+}
+
+.assets-popup-format-box2 h1{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.assets-popup-format-box1 p.selected {
+    background-color: white;
+    color: black;
+    
+}

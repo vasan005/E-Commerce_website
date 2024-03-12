@@ -1,0 +1,1 @@
+export const BASE_URL="https://e-commerce-backend-p6ue.vercel.app/"

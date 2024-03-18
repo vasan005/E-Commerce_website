@@ -23,6 +23,7 @@ const App = () => {
           
 
           <Routes>
+          <Route path='/' element={<NavAndFooterMain/>} />
             <Route path='/landingmain' element={<NavAndFooterMain/>} />
             <Route path='/category' element={<NavAndFooterCategory/>} />
             <Route path='/emptyCart' element={<NavAndFooterCart/>} />

@@ -1,15 +1,9 @@
 .cat-container {
-  /* padding-bottom: 4rem; */
   margin: 3rem 4rem
       
 }
 
-.cat-main {
-    /* margin: 100px 0 0 100px; */
-   
-    
-  
-}
+
 .cat-heading {
     padding: 30px 0px;
     color: white;
@@ -44,7 +38,7 @@ position: absolute;
     font-size: 16px;
     background-color: #0e0e0e00;
     padding-left: 40px;
-    /* border-image: linear-gradient(to right, #FF5F6A, #FFA752); */
+  
    
     
     

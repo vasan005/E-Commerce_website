@@ -31,7 +31,9 @@ const AssetsCard = () => {
         <div className="card-assets">
             <div className="box-assets">
                 <div className='image-assets' >
-                    <Link to="/assetsPopup"><img src={fox} /> </Link>
+                    {/* <Link to="/assetsPopup"> */}
+                        <img src={fox} /> 
+                        {/* </Link> */}
                 </div>
                 <div className='content-assets'>
                     <div className='title-assets01'>

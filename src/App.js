@@ -5,25 +5,38 @@ import Category from './components/catergories'
 import EmptyCart from './components/emptyCart'
 import Footer from './components/footer'
 import Nav from './components/navBar'
-import { BrowserRouter as Router, Routes, Route }
-    from 'react-router-dom';
+import LandingCart from "./components/landing02";
+import LandingVideo from "./components/landing03";
+import Wishlist from "./components/wishlist";
+import Search from "./components/search";
+import CartList from "./components/cart";
+import HistoryList from "./components/profile";
+
+
+
 
 const App = () =>
 {
   return (
     <>
     <div className=" w-full h-screen">
-    <Router>
+    
       <Nav/>
-      <Routes>
-      {/* <Category/> */}
-      <Route path='/' element={<EmptyCart/>}/>
+      
+        <LandingCart/>
+        <LandingVideo/>
+        <Wishlist/>
+        <Search/>
+        <CartList/>
+        <HistoryList/>
+      <Category/>
+     <EmptyCart/>
      
-      {/* <Route path='/Assets' element={<Assets/>}/>
-      <Route path='/AssetsPopup' element={<AssetsPopup/>}/>  */}
-      </Routes>
+      <Assets/>
+      <AssetsPopup/> 
+      
       <Footer/> 
-      </Router>
+      
       
       </div>
     </>

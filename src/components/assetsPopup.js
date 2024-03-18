@@ -76,9 +76,9 @@ const AssetsPopup = () => {
                     </div>
                 </div>
                 <div className='assets-popup-section3'>
-                    <Link to="/assets">
+                    {/* <Link to="/assets"> */}
                     <img src={close} />
-                    </Link>
+                    {/* </Link> */}
                 </div>
             </div>
         </div>

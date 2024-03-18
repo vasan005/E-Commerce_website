@@ -1,6 +1,7 @@
 import React from "react";
 import "./SignUpGuest.css";
 import GuestBg from "../image/signup.svg";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignUpGuest() {
   return (
@@ -37,9 +38,10 @@ function SignUpGuest() {
               />
             </div>
             <div className="guest-form-final-button">
+              <Link to={"/landingmain"}>
               <button type="submit" className="guest-submit-button">
                 SignUp as Guest
-              </button>
+              </button></Link>
             </div>
           </form>
         </div>

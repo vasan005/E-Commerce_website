@@ -1,8 +1,15 @@
 import React from "react";
 import "./Login.css";
 import login from "../image/signup.svg";
+import { Link , useNavigate } from "react-router-dom";
+
 
 function Login() {
+  const navigate = useNavigate();
+  const scrollToTop =  window.scrollTo({
+    top:0,
+    behavior:'smooth',
+  });
   return (
     <main className="login-main">
       <div className="right-login">
@@ -37,8 +44,11 @@ function Login() {
               />
             </div>
             <div className="loginform-final-button">
-              <button type="submit" className="login-submit-button">
-                Sign Up
+              <button type="submit" className="login-submit-button"  onClick={() => {
+          window.scrollTo({top: 0, behavior: 'smooth'})
+                            navigate('/landingmain')
+                        }}>
+                Login
               </button>
               {/* Google Sign In Button */}
               <a href="#" className="login-rounded-button google-login1-button">
@@ -66,7 +76,7 @@ function Login() {
             </div>
             <div className="login-form-final-div">
               <p>Don't have an account?</p>
-              <h3>SignUp</h3>
+              <Link to={"/signup"}><h3>SignUp</h3></Link>
             </div>
           </form>
         </div>

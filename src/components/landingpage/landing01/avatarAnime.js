@@ -26,7 +26,7 @@ function AvatarAnime() {
           backgroundImage: `url(${Background})`,
           width: "520px",
           height: "550px",
-          top:"5%",
+          top: "5%",
           left: "50%",
           transform: "translateX(-50%)",
         }}
@@ -41,7 +41,7 @@ function AvatarAnime() {
             className={`absolute transition-opacity duration-1000 ${
               index === currentAvatar ? "opacity-100" : "opacity-0"
             }`}
-            style={{ maxWidth: "400px", maxHeight: "450px", top:"20%"}}
+            style={{ maxWidth: "400px", maxHeight: "450px", top: "20%" }}
           />
         ))}
       </div>

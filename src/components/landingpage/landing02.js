@@ -1,6 +1,7 @@
 import React from "react";
 import "./landing02.css"
 import img1 from "../../image/fox.svg";
+import { Link } from "react-router-dom";
  
 const Our3DModels = () => {
   return (
@@ -9,7 +10,7 @@ const Our3DModels = () => {
         <div className="card-con-heading">
           <div className="card-con01">
             <h1>Our 3D Models</h1>
-            <p>View All</p>
+            <Link to={"/category"}><p>View All</p></Link>
           </div>
           <div className="card-con02">
             <div className="card">

@@ -11,6 +11,7 @@ import treeIcon from "../components/images/category/11.svg"
 import furnitureIcon from "../components/images/category/12.svg"
 import vehicleIcon from "../components/images/category/13.svg"
 import search from "../components/images/icons/01.svg"
+import { Link } from 'react-router-dom'
 const Category = () => {
     return (
         <div className='cat-container'>
@@ -24,13 +25,14 @@ const Category = () => {
                 </div>
                 <h2 className='cat-heading'>Explore Store Categories - Buy Professional 3D Models</h2>
                 <div className='cat-image'>
+                <Link to={"/assets"}>
                     <div className='cat-icons'>
                         <div className='icon-container'>
                             <img className='cat-icon-main' src={fox} />
                             <img className='cat-icon-active' src={foxIcon} />
                             <div className='icon-text'>Animals & Pets</div>
                         </div>
-                    </div>
+                    </div></Link>
                     <div className='cat-icons'>
                         <div className='icon-container'>
                             <img className='cat-icon-main' src={food} />
@@ -40,6 +42,7 @@ const Category = () => {
 
                         </div>
                     </div>
+                   
                     <div className='cat-icons'>
                         <div className='icon-container'>
                             <img className='cat-icon-main' src={tree} />

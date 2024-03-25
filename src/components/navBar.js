@@ -5,10 +5,12 @@ import wishlist from '../components/images/icons/02.svg';
 import cart from '../components/images/icons/03.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import profile from "../image/011.svg";
+import { useAuth } from './AuthContext';
 
 
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { isLoggedIn, login } = useAuth();
     let navigate = useNavigate(); 
 
     const routeChange = () => { 
@@ -20,6 +22,12 @@ const Nav = () => {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
+
+    const handleLogin = () => {
+       login();
+    };
+
 
     return (
         <div className={`navBar-container ${isOpen ? 'open' : ''}`}>
@@ -43,9 +51,12 @@ const Nav = () => {
                     <Link to="/emptyCart">
                         <img src={cart} alt="cart" />
                     </Link>
-                   
-                    {/* <img src={profile}/> */}
-                    <button onClick={routeChange}>Login</button>
+                     {/* Conditionally render profile image or login button based on isLoggedIn state */}
+                     {isLoggedIn ? (
+                        <Link to="/profile"><img src={profile} alt="profile" /></Link>
+                    ) : (
+                        <button onClick={() => {routeChange(); handleLogin();}}>Login</button>
+                    )}
                 </div>
 
                 <div className="hamburger-menu" onClick={toggleMenu}>

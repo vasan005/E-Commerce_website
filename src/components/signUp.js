@@ -12,58 +12,37 @@ const Signup = ()=> {
   const [phoneNumber, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  // const [confirmPassword, setConfirmPassword] = useState("");
 
-  
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    // Construct the request body
-    // const requestBody = {
-    //   fullName:fullName,
-    //   phoneNumber:phoneNumber,
-    //   email:email,
-    //   password:password,
-    //   // confirmPassword:confirmPassword,
-    // };
-
-    // Make a POST request to your API endpoint using Fetch
-    // try {
-      // const response = await fetch(BASE_URL + "users/signup", {
-        const form = {fullName,phoneNumber,email,password};
-        await fetch(BASE_URL+"users/signup",{
-        method: "POST",
-        // mode:"cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-        // mode:'no-cors'
-      }).then(()=>{
-        console.log("Signup successful!");
-      })}
-      ;
-
-  //     if (!response.ok) {
-  //       throw new Error(`HTTP error! Status: ${response.status}`);
-  //     }
-
-  //     const data = await response.json();
-  //     console.log(data); // Log the response data
-
-  //     // Check if there are any specific errors from your API
-  //     if (data.error) {
-  //       throw new Error(data.error);
-  //     }
-
-  //     // Handle success case - perhaps redirect user to another page or show a success message
-  //     console.log("Signup successful!");
-  //   } catch (error) {
-  //     // Log any errors that occurred during the fetch or processing of response
-  //     console.error("Error occurred:", error);
-  //     // You can also set state to display error message to user if needed
-  //   }
-  // };
+  const form = { fullName, phoneNumber, email, password };
+  await fetch(BASE_URL + "users/signup", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(form),
+  })
+    .then(async (response) => {
+      const responseData = await response.json();
+      if (!response.ok) {
+        throw new Error(responseData.message || "Sign up failed");
+      }
+      return responseData;
+    })
+    .then((data) => {
+      console.log("Signup successful!", data);
+      navigate("/landingmain");
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert(error.message || "Sign up failed. Please try again."); // Display alert message for error
+    });
+};
+ 
   return (
     <main className="signup-main">
       <div className="right-signup ">
@@ -142,7 +121,7 @@ const Signup = ()=> {
                 type="password"
                 id="confirmPassword"
                 name="confirmPassword"
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                // onChange={(e) => setConfirmPassword(e.target.value)}
                 // placeholder="Confirm Password"
                 className="form-input"
               />
@@ -160,10 +139,11 @@ const Signup = ()=> {
               </label>
             </div>
             <div className="form-final-button">
-              <Link to={"/landingmain"}>
+           
               <button type="submit" className="submit-button">
                 Sign Up
-              </button></Link>
+              </button>
+            
               {/* Google Sign In Button */}
               <a href="#" className="rounded-button google-login-button">
                 <span className="google-icon">

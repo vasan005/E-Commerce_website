@@ -12,17 +12,21 @@ import Signup from './components/signUp'
 import LandingMain from './components/landingpage/landingMain'
 import Login from './components/Login'
 import SignUpGuest from './components/SignUpGuest'
+import { AuthProvider } from './components/AuthContext';
+import HistoryList from './components/profile'
+import Payment from './components/payment'
 
 
 const App = () => {
   return (
     <>
       <div className=" w-full h-screen">
-       
+       <AuthProvider>
         <Router>
           
 
           <Routes>
+          <Route path='/' element={<NavAndFooterMain/>} />
             <Route path='/landingmain' element={<NavAndFooterMain/>} />
             <Route path='/category' element={<NavAndFooterCategory/>} />
             <Route path='/emptyCart' element={<NavAndFooterCart/>} />
@@ -31,11 +35,15 @@ const App = () => {
             <Route path="/signup" element={<Signup />} />
             <Route path="/signupguest" element={<SignUpGuest/>}/>
             <Route path="/login" element={<Login/>}/>
-            <Route path='/assets' element={<NavAndFooterAssets/>} />
+            <Route exact path='/assets/:categoryId' element={<NavAndFooterAssets/>} />
             <Route path='/assetsPopup' element={<NavAndFooterAssetspop/>} />
+            <Route path='/profile' element={<NavAndFooterProfile/>} />
+            <Route path="/payment" element={<NavAndFooterPayment/>} />
+
           </Routes>
          
         </Router>
+        </AuthProvider>
 
       </div>
     </>
@@ -114,4 +122,20 @@ const NavAndFooterSearch = () => (
   </>
 );
 
+
+const NavAndFooterProfile = () => (
+  <>
+  <Nav/>
+  <HistoryList/>
+  <Footer/>
+  </>
+)
+
+const NavAndFooterPayment =()=>(
+  <>
+  <Nav/>
+  <Payment/>
+  <Footer/>
+  </>
+)
 export default App

@@ -54,7 +54,7 @@ const AssetsPopup = () => {
                         <p>Access to future version</p>
                     </div>
                     <div className='assets-popup-buy'>
-                        <p>Buy Now</p>
+                       <Link to="/payment"> <p>Buy Now</p></Link>
                         <img src={imgPlus} onClick={handleClick01} alt="Plus" />
                         <img src={imgSrc} alt="Image" onClick={handleClick} />
                     </div>

@@ -1,46 +1,60 @@
 import React, { useState } from 'react';
 import "./landing03.css";
 import backgroundImage from "../../image/bg02.svg"
+import { BASE_URL } from "../../constant";
+
+
  
 const Landing03 = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phoneNumber: '',
-    message: ''
-  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhone] = useState("");
+  const [designTask, setDesignTask] = useState('');
  
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
+
  
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You can perform form submission logic here
-    console.log('Form Submitted:', formData);
-    // Optionally, you can reset the form fields after submission
-    setFormData({
-      name: '',
-      email: '',
-      phoneNumber: '',
-      message: ''
-    });
+  
+    const form = { name, phoneNumber, email, designTask };
+    await fetch(BASE_URL + "submit-form", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    })
+      .then(async (response) => {
+        const responseData = await response.json();
+        if (!response.ok) {
+          throw new Error(responseData.message || "Message not sent");
+        }
+        return responseData;
+      })
+      .then((data) => {
+        console.log("Message sent");
+        setName('');
+        setEmail('');
+        setPhone('');
+        setDesignTask('');
+       
+       
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert(error.message || "Please try again."); // Display alert message for error
+      });
   };
- 
   return (
     <div className="container02">
           <div className="video-main"
-        // style={{ backgroundImage: `url(${backgroundImage} )` }}
+        
         >
           <div className='video-contain'>
       <div className="video-container">
         <iframe
           className="video-con"
-          src="https://www.youtube.com/embed/hFohqioTAX8?si=a2JOgsry1JWI_Lhz"
+          // src="https://www.youtube.com/embed/hFohqioTAX8?si=a2JOgsry1JWI_Lhz"
           title="Video Player"
         />
       </div>
@@ -52,8 +66,8 @@ const Landing03 = () => {
           <input
             type="text"
             name="name"
-            value={formData.name}
-            onChange={handleChange}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             placeholder="Enter Your Name"
             className="form-border"
             required
@@ -61,8 +75,8 @@ const Landing03 = () => {
           <input
             type="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter Your Email Id"
             className="form-border"
             required
@@ -70,16 +84,16 @@ const Landing03 = () => {
           <input
             type="tel"
             name="phoneNumber"
-            value={formData.phoneNumber}
-            onChange={handleChange}
+            value={phoneNumber}
+            onChange={(e) => setPhone(e.target.value)}
             placeholder="Enter Your Mobile Number"
             className="form-border"
             required
           />
           <textarea
             name="message"
-            value={formData.message}
-            onChange={handleChange}
+            value={designTask}
+            onChange={(e) => setDesignTask(e.target.value)}
             placeholder="What Design Task Do You Have?"
             className="form-border-long"
             required

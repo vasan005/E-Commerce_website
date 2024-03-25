@@ -74,6 +74,7 @@ position: absolute;
       gap: 1rem;
       width: 90vw;
       padding-bottom: 1rem;
+      flex-wrap: wrap;
     
   }
 

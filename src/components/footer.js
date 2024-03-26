@@ -7,7 +7,7 @@ import linkdin from "../components/images/icons/17.svg"
 import youtube from "../components/images/icons/18.svg"
 import speaker from "../components/images/icons/19.svg"
 
-
+// praveen added
 const Footer = () => {
     return (
         <div className='footer-container'>

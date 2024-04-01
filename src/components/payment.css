@@ -1,5 +1,6 @@
 .payment-main{
     
+    
 }
 
 .payment-section1{
@@ -8,6 +9,7 @@
     justify-content: center;
     align-items: center;
     gap:0.5rem;
+    
 }
 
 .payment-section1 hr{
@@ -15,14 +17,14 @@
     
 }
 
-.payment-section1 h1{
+.payment-section1-div1 h1{
     font-size:1.5rem;
-    border: 1px solid transparent;
+    border: 1px solid #FF6169 ;
     border-radius: 50%;
     padding: 1rem;
-    background: linear-gradient(90deg,
-    rgba(255, 95, 106, 1) 0%,
-    rgba(255, 167, 82, 1) 100%);
+    cursor: pointer;
+  
+ 
 }
 
 
@@ -33,4 +35,83 @@
     rgba(255, 167, 82, 1) 100%);
     padding: 0.5rem;
     border-radius: 0.5rem;
+}
+
+.selected{
+    background: linear-gradient(90deg,
+    rgba(255, 95, 106, 1) 0%,
+    rgba(255, 167, 82, 1) 100%);
+}
+
+.payment-section2{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1rem
+}
+
+.payment-section2-div2{
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 35rem;
+}
+
+.billing-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap:4rem;
+    
+}
+
+.billing-form-group{
+    display: flex;
+    flex-direction:column;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.bill-input{
+    border-radius: 5px;
+    border: 1px solid white;
+    background: black;
+    padding: 1rem;
+}
+
+.bill-input-select{
+    border-radius: 5px;
+    border: 1px solid white;
+    background: black;
+    padding: 1rem;
+    width: 13rem;
+}
+
+.billing-form-heading h1{
+    font-size: 24px;
+    font-weight:bold;
+    padding: 1rem;
+
+}
+
+.bill-form-label{
+    font-size:24px;
+}
+
+.billing-button{
+    color: white;
+    background: linear-gradient(90deg,
+    rgba(255, 95, 106, 1) 0%,
+    rgba(255, 167, 82, 1) 100%);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width:20%;
+    font-size: 16px;
+    font-weight: lighter;
+    
+    
+}
+.billing-form-button{
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
 }
